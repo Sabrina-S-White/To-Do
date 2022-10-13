@@ -2,6 +2,7 @@ import './style.css';
 import pageLoad from './pageLoad';
 import makeFolder from './folderMaker';
 import newNote from './newNote';
+import noteBuilder from './noteBuilder';
 
 export let index = [];
 
@@ -10,7 +11,10 @@ window.onload = () => {
 
     const btn = document.getElementById('btn');
     btn.addEventListener('click', () => {
-        newNote();
+        const x = new newNote();
+        x.newIndex();
+        noteBuilder();
+        console.log(index);
     })
 }
 

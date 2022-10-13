@@ -21,6 +21,9 @@ export default function pageLoad() {
     folderBtn.classList.add('btn');
     
     folderBtn.setAttribute('id', 'btn');
+    main.setAttribute('id', 'main');
 
     folderBtn.innerHTML = 'btn';
+
+    return {main};
 }
