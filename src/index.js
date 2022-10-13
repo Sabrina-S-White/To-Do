@@ -14,7 +14,8 @@ window.onload = () => {
         const x = new newNote();
         x.newIndex();
         noteBuilder();
-        console.log(index);
+        // console.log(index);
+        x.updateTitle();
     })
 }
 

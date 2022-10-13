@@ -18,6 +18,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  resolve: {
+    alias: {
+        jquery: 'jQuery',
+    },
+  },
   optimization: {
     runtimeChunk: 'single',
   },

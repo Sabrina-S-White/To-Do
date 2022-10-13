@@ -2,9 +2,13 @@
     --black: 12, 15, 10;
     --white: 248, 249, 250;
     --yellow: 213, 160, 33;
-    --pink: 244, 219, 216;
+    --lightYellow: 252, 191, 73;
+    --pink: 152, 82, 119;
+    --lightPink: 206, 106, 133;
     --blue: 134, 173, 197;
     --lightBlue: 168, 218, 220;
+    --green: 107, 144, 128;
+    --lightGreen: 164, 195, 178;
     --note: 222, 226, 230;
 }
 
@@ -17,6 +21,16 @@
 body {
     height: 100vh;
     width: 100vw;
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .container {
@@ -54,7 +68,7 @@ body {
     scroll-behavior: smooth;
     overflow-y: scroll;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     margin: 20px 10px;
 }
@@ -63,7 +77,7 @@ body {
 
 .noteDiv {
     height: 500px;
-    width: 85%;
+    width: 90%;
     background-color: rgb(var(--note));
     display: flex;
     justify-content: center;
@@ -74,4 +88,90 @@ body {
     height: 95%;
     width: 95%;
     border: 1px dashed rgb(var(--blue));
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7fr 1fr;
+}
+
+.noteTextDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noteTextDiv h2 {
+    text-align: center;
+    padding: 5px;
+    width: 85%;
+    height: 10%;
+}
+
+.noteTextDiv p {
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+    border: 1px dashed rgb(var(--blue))
+}
+
+.noteBtnDiv {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.doneBtn {
+    height: 75%;
+    width: 80%;
+    background-color: rgb(var(--lightBlue));
+    border-radius: 15%;
+    border: 1px dotted rgb(var(--blue))
+}
+
+.doneBtn:hover {
+    background-color: rgb(var(--blue));
+}
+
+.prioBtnDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.prioBtnSubDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 255px;
+}
+
+.prioBtn {
+    height: 100%;
+    width: 33%;
+    border-radius: 15%;
+    border: 1px dotted rgb(var(--blue));
+}
+
+#prioLowBtn {
+    background-color: rgb(var(--lightGreen));
+}
+
+#prioLowBtn:hover {
+    background-color: rgb(var(--green));
+}
+
+#prioMidBtn {
+    background-color: rgb(var(--lightYellow));
+}
+
+#prioMidBtn:hover {
+    background-color: rgb(var(--yellow));
+}
+
+#prioHighBtn {
+    background-color: rgb(var(--lightPink));
+}
+
+#prioHighBtn:hover {
+    background-color: rgb(var(--pink));
 }
