@@ -10,6 +10,8 @@
     --green: 107, 144, 128;
     --lightGreen: 164, 195, 178;
     --note: 222, 226, 230;
+    --red: 217, 4, 41;
+    --brightGreen: 56, 176, 0;
 }
 
 * {
@@ -53,7 +55,7 @@ button {
 
 .headerLeft {
     display: flex;
-    width: 35%;
+    width: 50%;
     height: 90%;
     align-items: center;
     gap: 40px;
@@ -79,10 +81,12 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 
 #newBtn:hover {
-    background-color: rgb(var(--green));
+    height: 45%;
+    width: 15%;
 }
 
 #deleteBtn {
@@ -94,10 +98,12 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 
 #deleteBtn:hover {
-    background-color: rgb(var(--pink));
+    height: 45%;
+    width: 15%;
 }
 
 .headerImg img {
@@ -114,21 +120,22 @@ button {
     height: auto;
     background-color: rgb(var(--lightBlue));
     grid-row: 2 / 3;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-rows: auto;
     scroll-behavior: smooth;
     overflow-y: scroll;
-    justify-items: center;
-    align-items: flex-start;
     gap: 20px;
     padding: 20px 0;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Note styling */
 
 .noteDiv {
     height: 10%;
-    width: 90%;
+    width: 95%;
     background-color: rgb(var(--note));
     display: flex;
     justify-content: center;
@@ -155,7 +162,7 @@ button {
     padding: 0 10px;
     width: 90%;
     height: 100%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border: 1px dashed black;
     background-color: rgb(var(--note));
 }
@@ -164,6 +171,8 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
     padding: 10px;
     gap: 20px;
     width: 30%;
@@ -172,13 +181,17 @@ button {
 .doneBtn {
     height: 100%;
     width: 100%;
-    background-color: rgb(var(--lightBlue));
+    background-color: rgb(var(--brightGreen));
     border-radius: 15%;
     border: 1px dotted black;
+    padding: 2px;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
 .doneBtn:hover {
-    background-color: rgb(var(--blue));
+    height: 110%;
+    width: 110%;
 }
 
 .prioBtnLow {
@@ -187,10 +200,13 @@ button {
     border-radius: 15%;
     border: 1px dotted black;
     background-color: rgb(var(--lightGreen));
+    padding: 2px;
+    transition: 0.5s;
 }
 
 .prioBtnLow:hover {
-    background-color: rgb(var(--green));
+    height: 110%;
+    width: 110%;
 }
 
 
@@ -200,10 +216,13 @@ button {
     border-radius: 15%;
     border: 1px dotted black;
     background-color: rgb(var(--lightYellow));
+    padding: 2px;
+    transition: 0.5s;
 }
 
 .prioBtnMid:hover {
-    background-color: rgb(var(--yellow));
+    height: 110%;
+    width: 110%;
 }
 
 .prioBtnHigh {
@@ -212,10 +231,13 @@ button {
     border-radius: 15%;
     border: 1px dotted black;
     background-color: rgb(var(--lightPink));
+    padding: 2px;
+    transition: 0.5s;
 }
 
 .prioBtnHigh:hover {    
-    background-color: rgb(var(--pink));
+    height: 110%;
+    width: 110%;
 }
 
 /* Footer Styling */

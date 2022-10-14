@@ -40,10 +40,10 @@ export default function noteBuilder() {
         topic.setAttribute('id', 'topic');
         topic.setAttribute('name', 'topic');
         topic.classList.add('topic');
-        topic.setAttribute('maxlength', '45');
+        topic.setAttribute('maxlength', '40');
 
         topic.innerHTML = 'Note ' + `${index.length}`;
-        noteDone.innerHTML = 'Done';
+        noteDone.innerHTML = 'Active';
         notePrioLow.innerHTML = 'Low';
         notePrioMid.innerHTML = 'Med';
         notePrioHigh.innerHTML = 'High';

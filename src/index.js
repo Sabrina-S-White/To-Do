@@ -3,6 +3,7 @@ import pageLoad from './pageLoad';
 import newNote from './newNote';
 import noteBuilder from './noteBuilder';
 import doneNote from './doneNote';
+import doneCheck from './newNote';
 
 export let index = [];
 
@@ -15,6 +16,8 @@ window.onload = () => {
         x.newIndex();
         noteBuilder();
         doneNote();
+        x.doneCheck();
+        x.doneStyle();
         console.log(index);
     });
 }
