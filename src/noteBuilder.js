@@ -3,56 +3,48 @@ import {index} from './index.js';
 export default function noteBuilder() {
     const main = document.getElementById('main')
         const noteDiv = document.createElement('div');
-        const noteInnerDiv = document.createElement('div');
+        const prioLight = document.createElement('div');
         const noteTextDiv = document.createElement('div');
         const noteBtnDiv = document.createElement('div');
-        const prioBtnDiv = document.createElement('div');
-        const prioBtnSubdiv = document.createElement('div');
-        const noteTitle = document.createElement('h2');
-        const noteBody = document.createElement('p');
-        const prioP = document.createElement('p');
+        const topic = document.createElement('input');
         const noteDone = document.createElement('button');
         const notePrioLow = document.createElement('button');
         const notePrioMid = document.createElement('button');
         const notePrioHigh = document.createElement('button');
 
         main.appendChild(noteDiv);
-        noteDiv.appendChild(noteInnerDiv);
-        noteInnerDiv.appendChild(noteTextDiv);
-        noteInnerDiv.appendChild(noteBtnDiv);
-        noteTextDiv.appendChild(noteTitle);
-        noteTextDiv.appendChild(noteBody);
+        noteDiv.appendChild(prioLight);
+        noteDiv.appendChild(noteTextDiv);
+        noteTextDiv.appendChild(topic);
+        noteDiv.appendChild(noteBtnDiv);
+        noteBtnDiv.appendChild(notePrioLow);
+        noteBtnDiv.appendChild(notePrioMid);
+        noteBtnDiv.appendChild(notePrioHigh);
         noteBtnDiv.appendChild(noteDone);
-        noteBtnDiv.appendChild(prioBtnDiv);
-        prioBtnDiv.appendChild(prioP);
-        prioBtnDiv.appendChild(prioBtnSubdiv)
-        prioBtnSubdiv.appendChild(notePrioLow);
-        prioBtnSubdiv.appendChild(notePrioMid);
-        prioBtnSubdiv.appendChild(notePrioHigh);
 
         noteDiv.classList.add('noteDiv');
-        noteInnerDiv.classList.add('noteInnerDiv');
+        prioLight.classList.add('prioLight');
         noteTextDiv.classList.add('noteTextDiv');
         noteBtnDiv.classList.add('noteBtnDiv');
-        prioBtnDiv.classList.add('prioBtnDiv');
-        prioBtnSubdiv.classList.add
         noteDone.classList.add('doneBtn');
-        notePrioLow.classList.add('prioBtn');
-        notePrioMid.classList.add('prioBtn');
-        notePrioHigh.classList.add('prioBtn');
+        notePrioLow.classList.add('prioBtnLow');
+        notePrioMid.classList.add('prioBtnMid');
+        notePrioHigh.classList.add('prioBtnHigh');
 
-        noteDone.setAttribute('id', 'doneBtn');
-        notePrioLow.setAttribute('id', 'prioLowBtn');
-        notePrioMid.setAttribute('id', 'prioMidBtn');
-        notePrioHigh.setAttribute('id', 'prioHighBtn');
+        noteDone.setAttribute('id', 'doneBtn' + `${(index.length) - 1}`);
+        notePrioLow.setAttribute('id', 'prioLowBtn' + `${(index.length) - 1}`);
+        notePrioMid.setAttribute('id', 'prioMidBtn' + `${(index.length) - 1}`);
+        notePrioHigh.setAttribute('id', 'prioHighBtn' + `${(index.length) - 1}`);
 
-        noteTitle.setAttribute('contentEditable', 'true');
-        noteBody.setAttribute('contentEditable', 'true');
+        topic.setAttribute('type', 'text');
+        topic.setAttribute('id', 'topic');
+        topic.setAttribute('name', 'topic');
+        topic.classList.add('topic');
+        topic.setAttribute('maxlength', '45');
 
-        noteTitle.innerHTML = 'Note ' + `${index.length}`;
+        topic.innerHTML = 'Note ' + `${index.length}`;
         noteDone.innerHTML = 'Done';
         notePrioLow.innerHTML = 'Low';
         notePrioMid.innerHTML = 'Med';
         notePrioHigh.innerHTML = 'High';
-        prioP.innerHTML = 'Priority'
     }
