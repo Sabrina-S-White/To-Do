@@ -6,6 +6,7 @@ export default function noteBuilder() {
         const prioLight = document.createElement('div');
         const noteTextDiv = document.createElement('div');
         const noteBtnDiv = document.createElement('div');
+        const noteId = document.createElement('div');
         const topic = document.createElement('input');
         const noteDone = document.createElement('button');
         const notePrioLow = document.createElement('button');
@@ -14,6 +15,7 @@ export default function noteBuilder() {
 
         main.appendChild(noteDiv);
         noteDiv.appendChild(prioLight);
+        prioLight.appendChild(noteId);
         noteDiv.appendChild(noteTextDiv);
         noteTextDiv.appendChild(topic);
         noteDiv.appendChild(noteBtnDiv);
@@ -30,11 +32,13 @@ export default function noteBuilder() {
         notePrioLow.classList.add('prioBtnLow');
         notePrioMid.classList.add('prioBtnMid');
         notePrioHigh.classList.add('prioBtnHigh');
+        noteId.classList.add('noteId');
 
         noteDone.setAttribute('id', 'doneBtn' + `${(index.length) - 1}`);
         notePrioLow.setAttribute('id', 'prioLowBtn' + `${(index.length) - 1}`);
         notePrioMid.setAttribute('id', 'prioMidBtn' + `${(index.length) - 1}`);
         notePrioHigh.setAttribute('id', 'prioHighBtn' + `${(index.length) - 1}`);
+        noteId.setAttribute('id', 'noteId' + `${(index.length)}`);
 
         topic.setAttribute('type', 'text');
         topic.setAttribute('id', 'topic');
@@ -42,7 +46,8 @@ export default function noteBuilder() {
         topic.classList.add('topic');
         topic.setAttribute('maxlength', '40');
 
-        topic.innerHTML = 'Note ' + `${index.length}`;
+        topic.value = 'Note ' + `${index.length}`;
+        noteId.innerHTML = `${index.length}`
         noteDone.innerHTML = 'Active';
         notePrioLow.innerHTML = 'Low';
         notePrioMid.innerHTML = 'Med';

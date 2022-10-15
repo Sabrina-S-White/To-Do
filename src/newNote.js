@@ -3,13 +3,31 @@ import {index} from './index.js';
 export default class newNote {  
     constructor(id, name, value) {
         this.id = index.length;
-        this.name = 'Note ' + `${(index.length) + 1 }`;
+        this.name = 'note' + (index.length + 1);
         this.value = 'OFF';
     }   
 
     newIndex = () => {
         index.push(this)
     }
+
+    updateNote = () => {
+        const topics = document.querySelectorAll('.topic');
+ 
+        for (const topic of topics) {
+            topic.addEventListener('focusout', () => {
+                    for (const note of index) {
+                        if (this.id === note.id) {
+                            note.name = topic.value;
+                            console.log(index);
+                        }
+                    }
+                }
+            )
+        }
+    }
+                        
+    
 
     doneCheck = () => {
         const btns = document.querySelectorAll('.doneBtn');
