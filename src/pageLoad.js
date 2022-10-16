@@ -92,5 +92,5 @@ export default function pageLoad() {
     linked.appendChild(linkImg);
     email.appendChild(emailImg);
 
-    return {main};
+    return {main, deleteBtn};
 }

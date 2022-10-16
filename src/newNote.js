@@ -12,53 +12,13 @@ export default class newNote {
     }
 
     updateNote = () => {
-        const topics = document.querySelectorAll('.topic');
- 
-        for (const topic of topics) {
-            topic.addEventListener('focusout', () => {
-                    for (const note of index) {
-                        if (this.id === note.id) {
-                            note.name = topic.value;
-                            console.log(index);
-                        }
-                    }
-                }
-            )
-        }
-    }
-                        
-    
-
-    doneCheck = () => {
-        const btns = document.querySelectorAll('.doneBtn');
-        for (const btn of btns) {
-            btn.addEventListener('click', () => {
-              btn.value=(btn.value=="ON")?"OFF":"ON";  
-              if (btn.value == 'ON') {
-                this.value = 'ON';
-              } else {
-                this.value = 'OFF'
-              }
+        const toDos = document.querySelectorAll('.topic');
+        for (const e of toDos) {
+            e.addEventListener('click', () => {
+                console.log('ok')
             })
-            
         }
         
-    }
 
-    doneStyle = () => {
-        const btns = document.querySelectorAll('.doneBtn');
-        for (const btn of btns) {
-            btn.addEventListener('click', () => {
-                if (this.value == 'ON') {
-                    btn.innerHTML = 'Done';
-                    btn.style.backgroundColor = 'rgb(var(--red))';
-                    btn.style.color = '#fff';
-                } else {
-                    btn.innerHTML = 'Active';
-                    btn.style.backgroundColor = 'rgb(var(--brightGreen))';
-                    btn.style.color = 'black';
-                } 
-            })
-        }
     }
 }
