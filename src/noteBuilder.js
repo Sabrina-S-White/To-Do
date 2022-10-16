@@ -58,6 +58,7 @@ export default function noteBuilder() {
         notePrioMid.innerHTML = 'Med';
         notePrioHigh.innerHTML = 'High';
 
+//Updates the name attribute of index to store topic values
         noteSave.addEventListener('click', () => {
             index[id].name = topic.value;
         })
@@ -66,14 +67,29 @@ export default function noteBuilder() {
             index[id].name = topic.value;
         })
 
+//Deletes to-dos that are checked
         const deleteBtn = document.getElementById('deleteBtn');
         deleteBtn.addEventListener('click', () => {
             if (checkBox.checked) {
-                while (main.firstChild) {
-                    main.removeChild(main.firstChild);
+                while (noteDiv.firstChild) {
+                    noteDiv.removeChild(noteDiv.firstChild);
+                    noteDiv.remove();
                 }
                 index.splice(id, 1)
             } 
         }
     )
+
+//Changes color of prioLight depending on which button is clicked
+    notePrioLow.addEventListener('click', () => {
+        prioLight.style.backgroundColor = 'rgb(var(--lightGreen))'
+    })
+
+    notePrioMid.addEventListener('click', () => {
+        prioLight.style.backgroundColor = 'rgb(var(--lightYellow))'
+    });
+
+    notePrioHigh.addEventListener('click', () => {
+        prioLight.style.backgroundColor = 'rgb(var(--lightPink))'
+    })
 }
