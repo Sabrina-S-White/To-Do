@@ -38,6 +38,8 @@ export default function pageLoad() {
     const git = document.createElement('a');
     const linked = document.createElement('a');
     const email = document.createElement('a');
+    const btn = document.createElement('button');
+    const clearBtn = document.createElement('button');
 
     document.body.appendChild(container);
     container.appendChild(header);
@@ -59,6 +61,8 @@ export default function pageLoad() {
     item1.appendChild(git);
     item2.appendChild(linked);
     item3.appendChild(email);
+    footer.appendChild(btn);
+    footer.appendChild(clearBtn);
 
     container.classList.add('container');
     header.classList.add('header');
@@ -81,7 +85,7 @@ export default function pageLoad() {
     headerImg.appendChild(logoImg);
     deleteBtn.appendChild(trashImg);
 
-    headerText.innerHTML = 'Memory Keeper'
+    headerText.innerHTML = 'To Do'
 
     //footer 
     git.setAttribute('href', 'https://github.com/Sabrina-S-White');
@@ -92,5 +96,8 @@ export default function pageLoad() {
     linked.appendChild(linkImg);
     email.appendChild(emailImg);
 
-    return {main, deleteBtn};
+    btn.setAttribute('id', 'indexBtn');
+    clearBtn.setAttribute('id', 'clearStorage')
+
+    return {main, deleteBtn, btn, clearBtn};
 }

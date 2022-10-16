@@ -113,7 +113,6 @@ button {
 
 .headerText {
     font-style: italic;
-    text-decoration: underline dashed 3px;
 }
 
 .main {
@@ -271,4 +270,16 @@ button {
     gap: 20px;
     padding: 0 30px;
     list-style: none;
+}
+
+#indexBtn {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+}
+
+#clearStorage {
+    height: 50px;
+    width: 50px;
+    background-color: red;
 }
