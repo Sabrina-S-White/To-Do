@@ -1,285 +1,284 @@
 :root {
-    --black: 12, 15, 10;
-    --white: 248, 249, 250;
-    --yellow: 213, 160, 33;
-    --lightYellow: 252, 191, 73;
-    --pink: 152, 82, 119;
-    --lightPink: 206, 106, 133;
-    --blue: 134, 173, 197;
-    --lightBlue: 168, 218, 220;
-    --green: 107, 144, 128;
-    --lightGreen: 164, 195, 178;
-    --note: 222, 226, 230;
-    --red: 217, 4, 41;
-    --brightGreen: 56, 176, 0;
+  --black: 12, 15, 10;
+  --white: 248, 249, 250;
+  --yellow: 213, 160, 33;
+  --lightYellow: 252, 191, 73;
+  --pink: 152, 82, 119;
+  --lightPink: 206, 106, 133;
+  --blue: 134, 173, 197;
+  --lightBlue: 168, 218, 220;
+  --green: 107, 144, 128;
+  --lightGreen: 164, 195, 178;
+  --note: 222, 226, 230;
+  --red: 217, 4, 41;
+  --brightGreen: 56, 176, 0;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 button {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr 1fr;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
 }
 
 .header {
-    background-color: rgb(var(--blue));
-    grid-row: 1 / 2;
-    box-shadow: 0em 0.3em 1em rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: rgb(var(--blue));
+  grid-row: 1 / 2;
+  box-shadow: 0em 0.3em 1em rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerLeft {
-    display: flex;
-    width: 50%;
-    height: 90%;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
+  display: flex;
+  width: 50%;
+  height: 90%;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
 }
 
 .headerRight {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    width: 20%;
-    height: 90%;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 20%;
+  height: 90%;
+  justify-items: center;
+  align-items: center;
 }
 
 #newBtn {
-    height: 50%;
-    width: 40%;
-    background-color: rgb(var(--lightGreen));
-    border-radius: 15%;
-    border: 1px dotted black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+  height: 50%;
+  width: 40%;
+  background-color: rgb(var(--lightGreen));
+  border-radius: 15%;
+  border: 1px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
 }
 
 #newBtn:hover {
-    height: 55%;
-    width: 45%;
+  height: 55%;
+  width: 45%;
 }
 
 #deleteBtn {
-    height: 50%;
-    width: 40%;
-    background-color: rgb(var(--lightPink));
-    border-radius: 15%;
-    border: 1px dotted black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+  height: 50%;
+  width: 40%;
+  background-color: rgb(var(--lightPink));
+  border-radius: 15%;
+  border: 1px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
 }
 
 #deleteBtn:hover {
-    height: 55%;
-    width: 45%;
+  height: 55%;
+  width: 45%;
 }
 
 .headerImg img {
-    height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
 
 .headerText {
-    font-style: italic;
+  font-style: italic;
 }
 
 .main {
-    height: auto;
-    background-color: aliceblue;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    grid-template-rows: auto;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    gap: 20px;
-    padding: 20px 0;
-    justify-content: flex-start;
-    align-items: center;
+  height: auto;
+  background-color: aliceblue;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  gap: 20px;
+  padding: 20px 0;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* Note styling */
 
 .noteDiv {
-    height: 10%;
-    width: 95%;
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0em 0.3em 1em rgba(0,0,0,0.3);
+  height: 10%;
+  width: 95%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .prioLight {
-    height: 100%;
-    width: 10%;
-    background-color: rgb(var(--lightGreen));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 10%;
+  background-color: rgb(var(--lightGreen));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .prioLight div {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkBox {
-    height: 75%;
-    width: 75%;
+  height: 75%;
+  width: 75%;
 }
 
 .noteTextDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 0 0 10px;
 }
 
 .topic {
-    text-align: start;
-    padding: 0 10px;
-    width: 90%;
-    height: 100%;
-    font-size: 1.3rem;
-    border: 1px dashed black;
-    background-color: rgb(var(--note));
+  text-align: start;
+  padding: 0 10px;
+  width: 90%;
+  height: 100%;
+  font-size: 1.3rem;
+  border: 1px dashed black;
+  background-color: rgb(var(--note));
 }
 
 .noteBtnDiv {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
-    padding: 10px;
-    gap: 20px;
-    width: 30%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  gap: 20px;
+  width: 30%;
 }
 
 .saveBtn {
-    height: 100%;
-    width: 100%;
-    background-color: rgb(var(--brightGreen));
-    border-radius: 15%;
-    border: 1px dotted black;
-    padding: 2px;
-    font-weight: 600;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(var(--brightGreen));
+  border-radius: 15%;
+  border: 1px dotted black;
+  padding: 2px;
+  font-weight: 600;
+  transition: 0.5s;
 }
 
 .saveBtn:hover {
-    height: 110%;
-    width: 110%;
+  height: 110%;
+  width: 110%;
 }
 
 .prioBtnLow {
-    height: 100%;
-    width: 100%;
-    border-radius: 15%;
-    border: 1px dotted black;
-    background-color: rgb(var(--lightGreen));
-    padding: 2px;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  border-radius: 15%;
+  border: 1px dotted black;
+  background-color: rgb(var(--lightGreen));
+  padding: 2px;
+  transition: 0.5s;
 }
 
 .prioBtnLow:hover {
-    height: 110%;
-    width: 110%;
+  height: 110%;
+  width: 110%;
 }
 
-
 .prioBtnMid {
-    height: 100%;
-    width: 100%;
-    border-radius: 15%;
-    border: 1px dotted black;
-    background-color: rgb(var(--lightYellow));
-    padding: 2px;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  border-radius: 15%;
+  border: 1px dotted black;
+  background-color: rgb(var(--lightYellow));
+  padding: 2px;
+  transition: 0.5s;
 }
 
 .prioBtnMid:hover {
-    height: 110%;
-    width: 110%;
+  height: 110%;
+  width: 110%;
 }
 
 .prioBtnHigh {
-    height: 100%;
-    width: 100%;
-    border-radius: 15%;
-    border: 1px dotted black;
-    background-color: rgb(var(--lightPink));
-    padding: 2px;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  border-radius: 15%;
+  border: 1px dotted black;
+  background-color: rgb(var(--lightPink));
+  padding: 2px;
+  transition: 0.5s;
 }
 
-.prioBtnHigh:hover {    
-    height: 110%;
-    width: 110%;
+.prioBtnHigh:hover {
+  height: 110%;
+  width: 110%;
 }
 
 /* Footer Styling */
 
 .footer {
-    background-color: rgb(var(--blue));
-    box-shadow: 0em -0.3em 1em rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
+  background-color: rgb(var(--blue));
+  box-shadow: 0em -0.3em 1em rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
 }
 
 .contactItemsDiv ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 30px;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px;
+  list-style: none;
 }
 
 #indexBtn {
-    height: 50px;
-    width: 50px;
-    background-color: black;
+  height: 50px;
+  width: 50px;
+  background-color: black;
 }
 
 #clearStorage {
-    height: 50px;
-    width: 50px;
-    background-color: red;
+  height: 50px;
+  width: 50px;
+  background-color: red;
 }
