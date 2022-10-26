@@ -8,6 +8,7 @@ export default function noteBuilder() {
   const prioBtn = document.createElement('button');
   const taskTextDiv = document.createElement('div');
   const taskBtnDiv = document.createElement('div');
+  const checkP = document.createElement('p');
   const checkDiv = document.createElement('div');
   const checkBox = document.createElement('input');
   const taskTitle = document.createElement('input');
@@ -22,6 +23,7 @@ export default function noteBuilder() {
   prioLight.appendChild(prioBtn);
   taskTextDiv.appendChild(taskTitle);
   taskTextDiv.appendChild(taskDetails);
+  taskBtnDiv.appendChild(checkP);
   taskBtnDiv.appendChild(checkDiv);
   checkDiv.appendChild(checkBox);
 
@@ -41,6 +43,7 @@ export default function noteBuilder() {
   checkBox.setAttribute('id', 'checkBox' + `${index.length - 1}`);
   checkBox.setAttribute('type', 'checkbox');
   checkBox.setAttribute('name', 'check');
+  checkP.innerHTML = 'Done'
 
   const trashBtn = document.getElementById('deleteBtn');
   trashBtn.addEventListener('click', () => {
