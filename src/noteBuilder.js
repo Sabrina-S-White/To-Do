@@ -40,6 +40,7 @@ export default function noteBuilder() {
 
   // adding attributes
   prioBtn.setAttribute('id', 'prioBtn' + `${index.length - 1}`);
+  prioBtn.innerHTML = 'Prio'
   checkBox.setAttribute('id', 'checkBox' + `${index.length - 1}`);
   checkBox.setAttribute('type', 'checkbox');
   checkBox.setAttribute('name', 'check');
