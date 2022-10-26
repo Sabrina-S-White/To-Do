@@ -14,8 +14,6 @@ import buildingBG from './images/bg-imgs/building.jpg';
 import modBG from './images/bg-imgs/mod.jpg';
 import sunBG from './images/bg-imgs/sun.jpg';
 
-import { index } from './index.js';
-
 export default function pageLoad() {
   // image handling
   const logoImg = new Image();
@@ -47,6 +45,10 @@ export default function pageLoad() {
   modImg.src = modBG;
   sunImg.src = sunBG;
 
+  //date-fns initialization
+  const fns = require('date-fns');
+  const date = fns.format(new Date(), "MM-dd-yyyy");
+
   // elements for page load
   const container = document.createElement('div');
 
@@ -59,6 +61,7 @@ export default function pageLoad() {
   const search = document.createElement('input');
   const add = document.createElement('a');
   const help = document.createElement('a');
+  const deleteBtn = document.createElement('a');
 
   // elements for main section
   const main = document.createElement('div');
@@ -66,6 +69,7 @@ export default function pageLoad() {
   const notes = document.createElement('div');
   const innerNotes = document.createElement('div');
   const mainTitle = document.createElement('div');
+  const mainTitleRight = document.createElement('div');
   const mainTasks = document.createElement('div');
 
   // elements for main title content
@@ -105,7 +109,9 @@ export default function pageLoad() {
 
   // appending content to mainTitle
   mainTitle.appendChild(title);
-  mainTitle.appendChild(view);
+  mainTitle.appendChild(mainTitleRight);
+  mainTitleRight.appendChild(view);
+  mainTitleRight.appendChild(deleteBtn);
 
   // appending elements to new note popup
   document.body.appendChild(noteDiv);
@@ -127,22 +133,30 @@ export default function pageLoad() {
   menuLeft.classList.add('menuLeft');
   menuRight.classList.add('menuRight');
   burger.classList.add('burger');
+  burger.classList.add('noselect');
   home.classList.add('home');
+  home.classList.add('noselect');
   search.classList.add('search');
   add.classList.add('add');
+  add.classList.add('noselect');
   help.classList.add('help');
+  help.classList.add('noselect');
   main.classList.add('main');
   sideBar.classList.add('sideBar');
   notes.classList.add('notes');
   innerNotes.classList.add('innerNotes');
   mainTitle.classList.add('mainTitle');
+  mainTitleRight.classList.add('mainTitleRight')
   mainTasks.classList.add('mainTasks');
   burger.classList.add('icons');
   home.classList.add('icons');
   add.classList.add('icons');
   help.classList.add('icons');
   title.classList.add('title');
+  title.classList.add('noselect');
   view.classList.add('icons-dark');
+  deleteBtn.classList.add('icons-dark');
+  view.classList.add('noselect');
   container.classList.add('bgImgBlue');
 
   // classlists for new note popup
@@ -159,7 +173,7 @@ export default function pageLoad() {
   cancel.classList.add('btn');
   save.classList.add('btn');
   noteTitle.classList.add('noteTitle');
-  noteDetails.classList.add('noteDetails')
+  noteDetails.classList.add('noteDetails');
 
   // appending images
   burger.appendChild(menuImg);
@@ -167,17 +181,18 @@ export default function pageLoad() {
   add.appendChild(plusImg);
   help.appendChild(helpImg);
   view.appendChild(tuneImg);
+  deleteBtn.appendChild(trashImg);
 
   // appending text
-  title.innerHTML = 'Inbox';
+  title.innerHTML = "Today, " + `${date}`
   cancel.innerHTML = 'Cancel';
   save.innerHTML = 'Save';
 
   // page attributes
   search.setAttribute('placeholder', 'Search');
   noteTitle.setAttribute('placeholder', 'New Note');
-  noteDetails.setAttribute('placeholder', 'Description')
-  noteDetails.setAttribute('id', 'noteDetails')
+  noteDetails.setAttribute('placeholder', 'Description');
+  noteDetails.setAttribute('id', 'noteDetails');
   noteDiv.setAttribute('id', 'popup');
   sideBar.setAttribute('id', 'sideBar');
 
@@ -187,6 +202,7 @@ export default function pageLoad() {
   cancel.setAttribute('id', 'cancelBtn');
   save.setAttribute('id', 'saveBtn');
   help.setAttribute('id', 'helpBtn');
+  deleteBtn.setAttribute('id', 'deleteBtn');
 
   return {};
 }

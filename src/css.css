@@ -141,12 +141,28 @@ textarea:focus {
   align-items: center;
 }
 
+.mainTitleRight {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.mainTasks {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* main title styling */
 .title {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0 20px;
-  font-style: italic;
 }
 
 /* Placeholder text color */
@@ -227,7 +243,7 @@ textarea:focus {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  padding: 0 10px;
+  padding: 0 10px 5px 10px;
   line-height: 1.2rem;
   color: black;
   font-weight: bold;
@@ -304,4 +320,45 @@ textarea:focus {
 
 #saveBtn:hover {
   background-color: rgb(33, 80, 131);
+}
+
+/* disable text selection */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* task styling */
+
+.taskDiv {
+  width: 100%;
+  height: 10%;
+  background-color: rgba(33, 80, 131, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.prioLight {
+  height: 100%;
+  width: 10%;
+  background-color: rgba(0, 128, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prioHigh {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.prioBtn {
+  height: 20px;
+  width: 20px;
 }

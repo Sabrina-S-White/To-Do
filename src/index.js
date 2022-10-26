@@ -43,8 +43,15 @@ window.onload = () => {
     noteBuilder();
   })
 
+  // cancel button
+  const cancelBtn = document.getElementById('cancelBtn');
+  cancelBtn.addEventListener('click', () => {
+    popup.classList.toggle('noteDivPopup');
+  })
+
   const helpBtn = document.getElementById('helpBtn');
   helpBtn.addEventListener('click', () => {
     console.log(index);
+    console.log(index.indexOf())
   })
 };
