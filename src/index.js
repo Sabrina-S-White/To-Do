@@ -11,9 +11,23 @@ export const index = [];
 window.onload = () => {
   pageLoad();
 
+  // favicon load
+  const flavIcon = document.createElement('link');
+  flavIcon.type = 'image/x-icon';
+  flavIcon.rel = 'icon';
+  flavIcon.href = './fav.ico';
+  document.head.appendChild(flavIcon);
+
+  // sidebar popup 
   const burgerBtn = document.getElementById('burgerBtn');
   const sideBar = document.getElementById('sideBar');
   burgerBtn.addEventListener('click', () => {
     sideBar.classList.toggle('sideBarHide');
   });
+
+  // add new note 
+  const addBtn = document.getElementById('addBtn');
+  addBtn.addEventListener('click', () => {
+    
+  })
 };

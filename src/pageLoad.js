@@ -9,7 +9,6 @@ import burgerIcon from './images/menu.png';
 import homeIcon from './images/home.png';
 import helpIcon from './images/help.png';
 import tune from './images/tune.png';
-import favicon from './images/favicon.png';
 import blueBG from './images/bg-imgs/blue.jpg';
 import buildingBG from './images/bg-imgs/building.jpg';
 import modBG from './images/bg-imgs/mod.jpg';
@@ -27,7 +26,6 @@ export default function pageLoad() {
   const homeImg = new Image();
   const helpImg = new Image();
   const tuneImg = new Image();
-  const faviconImg = new Image();
   const blueImg = new Image();
   const buildingImg = new Image();
   const modImg = new Image();
@@ -42,7 +40,6 @@ export default function pageLoad() {
   homeImg.src = homeIcon;
   helpImg.src = helpIcon;
   tuneImg.src = tune;
-  faviconImg.src = favicon;
   blueImg.src = blueBG;
   buildingImg.src = buildingBG;
   modImg.src = modBG;
@@ -50,7 +47,7 @@ export default function pageLoad() {
 
   // elements for page load
   const container = document.createElement('div');
-  const faviconLink = document.createElement('link');
+
   // elements for menu bar
   const menu = document.createElement('div');
   const menuLeft = document.createElement('div');
@@ -60,6 +57,7 @@ export default function pageLoad() {
   const search = document.createElement('input');
   const add = document.createElement('a');
   const help = document.createElement('a');
+
   // elements for main section
   const main = document.createElement('div');
   const sideBar = document.createElement('div');
@@ -67,12 +65,26 @@ export default function pageLoad() {
   const innerNotes = document.createElement('div');
   const mainTitle = document.createElement('div');
   const mainTasks = document.createElement('div');
+
   // elements for main title content
   const title = document.createElement('p');
   const view = document.createElement('a');
 
+  // content for new note popup
+  const noteDiv = document.createElement('div');
+  const noteContentDiv = document.createElement('div');
+  const noteBtnsDiv = document.createElement('div');
+  const noteBtnsDivL = document.createElement('div');
+  const noteBtnsDivR = document.createElement('div');
+  const noteTitle = document.createElement('input');
+  const noteDetails = document.createElement('textarea');
+  const inbox = document.createElement('a');
+  const scheduled = document.createElement('a');
+  const priority = document.createElement('a');
+  const cancel = document.createElement('button');
+  const save = document.createElement('button');
+
   // appending elements to document
-  document.head.appendChild(faviconLink);
   document.body.appendChild(container);
   container.appendChild(menu);
   container.appendChild(main);
@@ -88,10 +100,26 @@ export default function pageLoad() {
   notes.appendChild(innerNotes);
   innerNotes.appendChild(mainTitle);
   innerNotes.appendChild(mainTasks);
+
   // appending content to mainTitle
   mainTitle.appendChild(title);
   mainTitle.appendChild(view);
 
+  // appending elements to new note popup
+  document.body.appendChild(noteDiv);
+  noteDiv.appendChild(noteContentDiv);
+  noteDiv.appendChild(noteBtnsDiv);
+  noteContentDiv.appendChild(noteTitle);
+  noteContentDiv.appendChild(noteDetails);
+  noteBtnsDiv.appendChild(noteBtnsDivL);
+  noteBtnsDiv.appendChild(noteBtnsDivR)
+  noteBtnsDivL.appendChild(inbox);
+  noteBtnsDivL.appendChild(scheduled);
+  noteBtnsDivR.appendChild(priority);
+  noteBtnsDivR.appendChild(cancel);
+  noteBtnsDivR.appendChild(save);
+
+  // classlists 
   container.classList.add('container');
   menu.classList.add('menu');
   menuLeft.classList.add('menuLeft');
@@ -115,6 +143,20 @@ export default function pageLoad() {
   view.classList.add('icons-dark');
   container.classList.add('bgImgBlue');
 
+  // classlists for new note popup
+  noteDiv.classList.add('noteDiv');
+  noteContentDiv.classList.add('noteContentDiv');
+  noteBtnsDiv.classList.add('noteBtnsDiv');
+  noteBtnsDivL.classList.add('noteBtnsDivInner');
+  noteBtnsDivR.classList.add('noteBtnsDivInner');
+  inbox.classList.add('icons');
+  scheduled.classList.add('icons');
+  priority.classList.add('icons');
+  cancel.classList.add('icons');
+  save.classList.add('icons');
+  cancel.classList.add('btn');
+  save.classList.add('btn');
+
   // appending images
   burger.appendChild(menuImg);
   home.appendChild(homeImg);
@@ -124,103 +166,18 @@ export default function pageLoad() {
 
   // appending text
   title.innerHTML = 'Inbox';
+  cancel.innerHTML = 'Cancel';
+  save.innerHTML = 'Save';
 
-  // setting attributes
+  // menu attributes
   search.setAttribute('placeholder', 'Search');
-  faviconLink.setAttribute('rel', 'icon');
-  faviconLink.setAttribute('href', 'faviconImg');
-  // buttons
+
+  // button attributes 
   burger.setAttribute('id', 'burgerBtn');
   sideBar.setAttribute('id', 'sideBar');
+  add.setAttribute('id', 'addBtn');
+  cancel.setAttribute('id', 'cancelBtn');
+  save.setAttribute('id', 'saveBtn');
 
-  return {
-  };
+  return {};
 }
-
-//   const container = document.createElement('div');
-//   const header = document.createElement('div');
-//   const main = document.createElement('div');
-//   const headerLeft = document.createElement('div');
-//   const headerRight = document.createElement('div');
-//   const footer = document.createElement('footer');
-//   const newBtn = document.createElement('button');
-//   const deleteBtn = document.createElement('button');
-//   const headerText = document.createElement('h1');
-//   const headerImg = document.createElement('div');
-//   // Div creation for contact
-//   const contactItemsDiv = document.createElement('div');
-//   const contactItemsUL = document.createElement('ul');
-//   const item1 = document.createElement('li');
-//   const item2 = document.createElement('li');
-//   const item3 = document.createElement('li');
-//   const git = document.createElement('a');
-//   const linked = document.createElement('a');
-//   const email = document.createElement('a');
-//   const btn = document.createElement('button');
-//   const clearBtn = document.createElement('button');
-
-//   document.body.appendChild(container);
-//   container.appendChild(header);
-//   container.appendChild(main);
-//   container.appendChild(footer);
-//   header.appendChild(headerLeft);
-//   header.appendChild(headerRight);
-//   headerLeft.appendChild(headerImg);
-//   headerLeft.appendChild(headerText);
-//   headerRight.appendChild(newBtn);
-//   headerRight.appendChild(deleteBtn);
-
-//   // footer
-//   footer.appendChild(contactItemsDiv);
-//   contactItemsDiv.appendChild(contactItemsUL);
-//   contactItemsUL.appendChild(item1);
-//   contactItemsUL.appendChild(item2);
-//   contactItemsUL.appendChild(item3);
-//   item1.appendChild(git);
-//   item2.appendChild(linked);
-//   item3.appendChild(email);
-//   footer.appendChild(btn);
-//   footer.appendChild(clearBtn);
-
-//   container.classList.add('container');
-//   header.classList.add('header');
-//   header.classList.add('light');
-//   main.classList.add('main');
-//   main.classList.add('light');
-//   footer.classList.add('footer');
-//   footer.classList.add('light');
-//   headerImg.classList.add('headerImg');
-//   headerText.classList.add('headerText');
-//   headerLeft.classList.add('headerLeft');
-//   headerRight.classList.add('headerRight');
-//   contactItemsDiv.classList.add('contactItemsDiv');
-
-//   newBtn.setAttribute('id', 'newBtn');
-//   deleteBtn.setAttribute('id', 'deleteBtn');
-//   main.setAttribute('id', 'main');
-
-//   newBtn.appendChild(plusImg);
-//   headerImg.appendChild(logoImg);
-//   deleteBtn.appendChild(trashImg);
-
-//   headerText.innerHTML = 'To Do';
-
-//   // footer
-//   git.setAttribute('href', 'https://github.com/Sabrina-S-White');
-//   linked.setAttribute(
-//     'href',
-//     'https://www.linkedin.com/in/sabrina-white-7ba594b7/',
-//   );
-//   email.setAttribute('href', 'mailto: sabrina.scherma@gmail.com');
-
-//   git.appendChild(gitImg);
-//   linked.appendChild(linkImg);
-//   email.appendChild(emailImg);
-
-//   btn.setAttribute('id', 'indexBtn');
-//   clearBtn.setAttribute('id', 'clearStorage');
-
-//   return {
-//     main, deleteBtn, btn, clearBtn,
-//   };
-// }
