@@ -31,4 +31,6 @@ window.onload = () => {
   addBtn.addEventListener('click', () => {
     popup.classList.toggle('noteDivPopup')
   })
+
+
 };

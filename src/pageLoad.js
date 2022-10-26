@@ -156,6 +156,8 @@ export default function pageLoad() {
   save.classList.add('icons');
   cancel.classList.add('btn');
   save.classList.add('btn');
+  noteTitle.classList.add('noteTitle');
+  noteDetails.classList.add('noteDetails')
 
   // appending images
   burger.appendChild(menuImg);
@@ -171,6 +173,9 @@ export default function pageLoad() {
 
   // page attributes
   search.setAttribute('placeholder', 'Search');
+  noteTitle.setAttribute('placeholder', 'New Note');
+  noteDetails.setAttribute('placeholder', '...')
+  noteDetails.setAttribute('id', 'noteDetails')
   noteDiv.setAttribute('id', 'popup');
   sideBar.setAttribute('id', 'sideBar');
 
