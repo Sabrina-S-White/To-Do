@@ -27,7 +27,8 @@ window.onload = () => {
 
   // add new note 
   const addBtn = document.getElementById('addBtn');
+  const popup = document.getElementById('popup');
   addBtn.addEventListener('click', () => {
-    
+    popup.classList.toggle('noteDivPopup')
   })
 };

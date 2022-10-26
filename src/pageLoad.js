@@ -112,14 +112,14 @@ export default function pageLoad() {
   noteContentDiv.appendChild(noteTitle);
   noteContentDiv.appendChild(noteDetails);
   noteBtnsDiv.appendChild(noteBtnsDivL);
-  noteBtnsDiv.appendChild(noteBtnsDivR)
+  noteBtnsDiv.appendChild(noteBtnsDivR);
   noteBtnsDivL.appendChild(inbox);
   noteBtnsDivL.appendChild(scheduled);
   noteBtnsDivR.appendChild(priority);
   noteBtnsDivR.appendChild(cancel);
   noteBtnsDivR.appendChild(save);
 
-  // classlists 
+  // classlists
   container.classList.add('container');
   menu.classList.add('menu');
   menuLeft.classList.add('menuLeft');
@@ -169,12 +169,13 @@ export default function pageLoad() {
   cancel.innerHTML = 'Cancel';
   save.innerHTML = 'Save';
 
-  // menu attributes
+  // page attributes
   search.setAttribute('placeholder', 'Search');
-
-  // button attributes 
-  burger.setAttribute('id', 'burgerBtn');
+  noteDiv.setAttribute('id', 'popup');
   sideBar.setAttribute('id', 'sideBar');
+
+  // button attributes
+  burger.setAttribute('id', 'burgerBtn');
   add.setAttribute('id', 'addBtn');
   cancel.setAttribute('id', 'cancelBtn');
   save.setAttribute('id', 'saveBtn');
