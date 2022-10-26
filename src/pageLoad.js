@@ -1,3 +1,4 @@
+// image imports
 import logo from './images/logo.png';
 import plus from './images/plus.png';
 import trash from './images/trash-can.png';
@@ -6,9 +7,16 @@ import link from './images/linkedin.png';
 import emailLink from './images/mail.png';
 import burgerIcon from './images/menu.png';
 import homeIcon from './images/home.png';
-import helpIcon from './images/help.png'
+import helpIcon from './images/help.png';
+import tune from './images/tune.png';
+import favicon from './images/favicon.png';
+import blueBG from './images/bg-imgs/blue.jpg';
+import buildingBG from './images/bg-imgs/building.jpg';
+import modBG from './images/bg-imgs/mod.jpg';
+import sunBG from './images/bg-imgs/sun.jpg';
 
 export default function pageLoad() {
+  // image handling
   const logoImg = new Image();
   const plusImg = new Image();
   const trashImg = new Image();
@@ -18,6 +26,12 @@ export default function pageLoad() {
   const menuImg = new Image();
   const homeImg = new Image();
   const helpImg = new Image();
+  const tuneImg = new Image();
+  const faviconImg = new Image();
+  const blueImg = new Image();
+  const buildingImg = new Image();
+  const modImg = new Image();
+  const sunImg = new Image();
   logoImg.src = logo;
   plusImg.src = plus;
   trashImg.src = trash;
@@ -27,9 +41,16 @@ export default function pageLoad() {
   menuImg.src = burgerIcon;
   homeImg.src = homeIcon;
   helpImg.src = helpIcon;
+  tuneImg.src = tune;
+  faviconImg.src = favicon;
+  blueImg.src = blueBG;
+  buildingImg.src = buildingBG;
+  modImg.src = modBG;
+  sunImg.src = sunBG;
 
   // elements for page load
   const container = document.createElement('div');
+  const faviconLink = document.createElement('link');
   // elements for menu bar
   const menu = document.createElement('div');
   const menuLeft = document.createElement('div');
@@ -41,12 +62,17 @@ export default function pageLoad() {
   const help = document.createElement('a');
   // elements for main section
   const main = document.createElement('div');
-  const innerMain = document.createElement('div');
+  const sideBar = document.createElement('div');
+  const notes = document.createElement('div');
+  const innerNotes = document.createElement('div');
   const mainTitle = document.createElement('div');
   const mainTasks = document.createElement('div');
-  const mainNew = document.createElement('div');
+  // elements for main title content
+  const title = document.createElement('p');
+  const view = document.createElement('a');
 
   // appending elements to document
+  document.head.appendChild(faviconLink);
   document.body.appendChild(container);
   container.appendChild(menu);
   container.appendChild(main);
@@ -57,10 +83,14 @@ export default function pageLoad() {
   menuLeft.appendChild(search);
   menuRight.appendChild(add);
   menuRight.appendChild(help);
-  main.appendChild(innerMain);
-  innerMain.appendChild(mainTitle);
-  innerMain.appendChild(mainTasks);
-  innerMain.appendChild(mainNew);
+  main.appendChild(sideBar);
+  main.appendChild(notes);
+  notes.appendChild(innerNotes);
+  innerNotes.appendChild(mainTitle);
+  innerNotes.appendChild(mainTasks);
+  // appending content to mainTitle
+  mainTitle.appendChild(title);
+  mainTitle.appendChild(view);
 
   container.classList.add('container');
   menu.classList.add('menu');
@@ -72,19 +102,40 @@ export default function pageLoad() {
   add.classList.add('add');
   help.classList.add('help');
   main.classList.add('main');
-  innerMain.classList.add('innerMain');
+  sideBar.classList.add('sideBar');
+  notes.classList.add('notes');
+  innerNotes.classList.add('innerNotes');
   mainTitle.classList.add('mainTitle');
   mainTasks.classList.add('mainTasks');
-  mainNew.classList.add('mainNew');
   burger.classList.add('icons');
   home.classList.add('icons');
   add.classList.add('icons');
   help.classList.add('icons');
+  title.classList.add('title');
+  view.classList.add('icons-dark');
+  container.classList.add('bgImgBlue');
 
+  // appending images
   burger.appendChild(menuImg);
   home.appendChild(homeImg);
   add.appendChild(plusImg);
   help.appendChild(helpImg);
+  view.appendChild(tuneImg);
+
+  // appending text
+  title.innerHTML = 'Inbox';
+
+  // setting attributes
+  search.setAttribute('placeholder', 'Search');
+  faviconLink.setAttribute('rel', 'icon');
+  faviconLink.setAttribute('href', 'faviconImg');
+  // buttons
+  burger.setAttribute('id', 'burgerBtn');
+  sideBar.setAttribute('id', 'sideBar');
+
+  return {
+  };
+}
 
 //   const container = document.createElement('div');
 //   const header = document.createElement('div');
@@ -173,4 +224,3 @@ export default function pageLoad() {
 //     main, deleteBtn, btn, clearBtn,
 //   };
 // }
-}

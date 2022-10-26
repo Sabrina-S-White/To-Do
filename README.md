@@ -18,3 +18,16 @@
 5. Create a UI 
     - Hamburger button that opens/collapses the sidebar. 
     - New folder button that 
+
+Credits:
+Photo by >Pramod Tiwari on Unsplash
+  https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+
+Photo by Oscar Mackey on Unsplash
+  https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  
+Photo by Luis Villasmil on Unsplash
+  https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  
+  

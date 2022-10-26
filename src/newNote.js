@@ -2,7 +2,7 @@
 import { index } from './index.js';
 
 export default class newNote {
-  constructor(id, name, value) {
+  constructor() {
     this.id = index.length;
     this.name = `note${index.length + 1}`;
     this.value = 'OFF';
