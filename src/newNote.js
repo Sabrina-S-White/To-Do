@@ -1,9 +1,10 @@
 import { index } from './index.js';
 
 export default class newNote {
-  constructor() {
+  constructor(name, description) {
     this.id = index.length;
-    this.name = `note${index.length + 1}`;
+    this.name = name;
+    this.description = description;
     this.value = 'OFF';
   }
 

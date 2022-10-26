@@ -32,5 +32,19 @@ window.onload = () => {
     popup.classList.toggle('noteDivPopup')
   })
 
+  // save new note
+  const saveBtn = document.getElementById('saveBtn');
+  const name = document.querySelector('.noteTitle');
+  const description = document.querySelector('.noteDetails')
+  saveBtn.addEventListener('click', () => {
+    let note = new newNote(name.value, description.value);
+    note.newIndex();
+    popup.classList.toggle('noteDivPopup');
+    noteBuilder();
+  })
 
+  const helpBtn = document.getElementById('helpBtn');
+  helpBtn.addEventListener('click', () => {
+    console.log(index);
+  })
 };

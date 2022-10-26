@@ -14,6 +14,8 @@ import buildingBG from './images/bg-imgs/building.jpg';
 import modBG from './images/bg-imgs/mod.jpg';
 import sunBG from './images/bg-imgs/sun.jpg';
 
+import { index } from './index.js';
+
 export default function pageLoad() {
   // image handling
   const logoImg = new Image();
@@ -174,7 +176,7 @@ export default function pageLoad() {
   // page attributes
   search.setAttribute('placeholder', 'Search');
   noteTitle.setAttribute('placeholder', 'New Note');
-  noteDetails.setAttribute('placeholder', '...')
+  noteDetails.setAttribute('placeholder', 'Description')
   noteDetails.setAttribute('id', 'noteDetails')
   noteDiv.setAttribute('id', 'popup');
   sideBar.setAttribute('id', 'sideBar');
@@ -184,6 +186,7 @@ export default function pageLoad() {
   add.setAttribute('id', 'addBtn');
   cancel.setAttribute('id', 'cancelBtn');
   save.setAttribute('id', 'saveBtn');
+  help.setAttribute('id', 'helpBtn');
 
   return {};
 }
