@@ -7,6 +7,7 @@ import noteBuilder from './noteBuilder';
 
 // eslint-disable-next-line import/prefer-default-export
 export const index = [];
+export const checkBoxAry = [];
 
 window.onload = () => {
   pageLoad();
@@ -28,8 +29,10 @@ window.onload = () => {
   // add new note 
   const addBtn = document.getElementById('addBtn');
   const popup = document.getElementById('popup');
+  const masc = document.querySelector('.masc');
   addBtn.addEventListener('click', () => {
     popup.classList.toggle('noteDivPopup')
+    masc.style.display = 'block';
   })
 
   // save new note
@@ -41,17 +44,50 @@ window.onload = () => {
     note.newIndex();
     popup.classList.toggle('noteDivPopup');
     noteBuilder();
+    name.value = '';
+    description.value = '';
+    masc.style.display = 'none';
   })
 
   // cancel button
   const cancelBtn = document.getElementById('cancelBtn');
   cancelBtn.addEventListener('click', () => {
     popup.classList.toggle('noteDivPopup');
+    name.value = '';
+    description.value = '';
+    masc.style.display = 'none';
   })
 
+  masc.addEventListener('click', () => {
+    popup.classList.toggle('noteDivPopup');
+    name.value = '';
+    description.value = '';
+    masc.style.display = 'none';
+  })
+
+  // help button
   const helpBtn = document.getElementById('helpBtn');
   helpBtn.addEventListener('click', () => {
     console.log(index);
-    console.log(index.indexOf())
+    console.log(checkBoxAry);
   })
+
+  // rendered to dos altering/drawing data from index
+  const tasks = document.querySelector('.mainTasks');
+  saveBtn.addEventListener('click', () => { 
+    tasks.innerHTML = '';
+    for (let i = 0; i < index.length; i++) {
+      noteBuilder(index[i].name, index[i].description);
+    }
+    }
+  );
+
+  const checkboxes = document.querySelectorAll('.checkBox') 
+  checkboxes.forEach(box => {
+  console.log(box);
+  box.addEventListener('check', () => {
+    console.log(box.value);
+  })
+})
 };
+

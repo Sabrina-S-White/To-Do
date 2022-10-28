@@ -47,10 +47,11 @@ export default function pageLoad() {
 
   //date-fns initialization
   const fns = require('date-fns');
-  const date = fns.format(new Date(), "MM-dd-yyyy");
+  const date = fns.format(new Date(), 'MM-dd-yyyy');
 
   // elements for page load
   const container = document.createElement('div');
+  const masc = document.createElement('div');
 
   // elements for menu bar
   const menu = document.createElement('div');
@@ -92,6 +93,7 @@ export default function pageLoad() {
 
   // appending elements to document
   document.body.appendChild(container);
+  document.body.appendChild(masc);
   container.appendChild(menu);
   container.appendChild(main);
   menu.appendChild(menuLeft);
@@ -129,6 +131,7 @@ export default function pageLoad() {
 
   // classlists
   container.classList.add('container');
+  masc.classList.add('masc');
   menu.classList.add('menu');
   menuLeft.classList.add('menuLeft');
   menuRight.classList.add('menuRight');
@@ -146,7 +149,7 @@ export default function pageLoad() {
   notes.classList.add('notes');
   innerNotes.classList.add('innerNotes');
   mainTitle.classList.add('mainTitle');
-  mainTitleRight.classList.add('mainTitleRight')
+  mainTitleRight.classList.add('mainTitleRight');
   mainTasks.classList.add('mainTasks');
   burger.classList.add('icons');
   home.classList.add('icons');
@@ -184,7 +187,7 @@ export default function pageLoad() {
   deleteBtn.appendChild(trashImg);
 
   // appending text
-  title.innerHTML = "Today, " + `${date}`
+  title.innerHTML = 'Today, ' + `${date}`;
   cancel.innerHTML = 'Cancel';
   save.innerHTML = 'Save';
 

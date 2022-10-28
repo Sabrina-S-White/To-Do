@@ -1,6 +1,6 @@
-import { index } from './index.js';
+import { index, checkBoxAry } from './index.js';
 
-export default function noteBuilder() {
+export default function noteBuilder(title, details) {
   // creating elements for to dos
   const mainTasks = document.querySelector('.mainTasks');
   const taskDiv = document.createElement('div');
@@ -11,7 +11,7 @@ export default function noteBuilder() {
   const checkP = document.createElement('p');
   const checkDiv = document.createElement('div');
   const checkBox = document.createElement('input');
-  const taskTitle = document.createElement('input');
+  const taskTitle = document.createElement('textarea');
   const taskDetails = document.createElement('textarea');
   const id = index.length - 1;
 
@@ -46,6 +46,14 @@ export default function noteBuilder() {
   checkBox.setAttribute('name', 'check');
   checkP.innerHTML = 'Done'
 
+  // note content 
+  taskTitle.innerHTML = `${title}`;
+  taskDetails.innerHTML = `${details}`;
+
+  // check box / DOM communication
+  checkBoxAry.push(checkBox);
+
+  // mark as done 
   const trashBtn = document.getElementById('deleteBtn');
   trashBtn.addEventListener('click', () => {
     // if (checkBox.checked) {
@@ -69,4 +77,6 @@ export default function noteBuilder() {
   //   prioBtnChange.addEventListener('click', () => {
   //   prioLight.classList.toggle('prioHigh');
   // })
+
+  return {  }
 }

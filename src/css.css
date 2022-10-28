@@ -156,6 +156,7 @@ textarea:focus {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 5px;
 }
 
 /* main title styling */
@@ -205,6 +206,16 @@ textarea:focus {
 }
 
 /* new note popup styling */
+.masc {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+
 .noteDiv {
   position: absolute;
   left: 0;
@@ -214,7 +225,7 @@ textarea:focus {
   z-index: 5;
   background-color: rgba(245, 245, 245, 1);
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 15px 50px 0 rgb(0 0 0 / 35%);
   transition: 0.3s;
   top: 10%;
@@ -244,10 +255,10 @@ textarea:focus {
   border-bottom: 1px solid black;
   background-color: transparent;
   padding: 0 10px 5px 10px;
-  line-height: 1.2rem;
   color: black;
   font-weight: bold;
   font-style: italic;
+  font-size: 20px;
 }
 
 .noteTitle::placeholder,
@@ -337,12 +348,11 @@ textarea:focus {
 
 .taskDiv {
   width: 100%;
-  height: 10%;
-  background-color: rgba(33, 80, 131, 0.4);
+  height: 15%;
+  background-color: rgba(88, 95, 102, 0.4);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
+  margin: 5px 0;
   border-radius: 10px;
 }
 
@@ -377,6 +387,7 @@ textarea:focus {
 .taskTextDiv {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 70%;
   padding-bottom: 10px;
 }
@@ -384,9 +395,20 @@ textarea:focus {
 .taskTitle,
 .taskDetails {
   border: none;
-  border-bottom: 1px solid black;
   background-color: transparent;
   resize: none;
+}
+
+.taskTitle {
+  font-size: 20px;
+  height: 24px;
+  text-decoration: underline;
+}
+
+.taskDetails {
+  overflow-y: hidden;
+  font-size: 18px;
+  height: 20px;
 }
 
 .taskBtnDiv {
