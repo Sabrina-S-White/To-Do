@@ -5,7 +5,7 @@ export default function noteBuilder(title, details) {
   const mainTasks = document.querySelector('.mainTasks');
   const taskDiv = document.createElement('div');
   const prioLight = document.createElement('div');
-  const prioBtn = document.createElement('button');
+  // const prioBtn = document.createElement('button');
   const taskTextDiv = document.createElement('div');
   const taskBtnDiv = document.createElement('div');
   const checkP = document.createElement('p');
@@ -20,7 +20,7 @@ export default function noteBuilder(title, details) {
   taskDiv.appendChild(prioLight);
   taskDiv.appendChild(taskTextDiv);
   taskDiv.appendChild(taskBtnDiv);
-  prioLight.appendChild(prioBtn);
+  // prioLight.appendChild(prioBtn);
   taskTextDiv.appendChild(taskTitle);
   taskTextDiv.appendChild(taskDetails);
   taskBtnDiv.appendChild(checkP);
@@ -32,15 +32,16 @@ export default function noteBuilder(title, details) {
   prioLight.classList.add('prioLight');
   taskTextDiv.classList.add('taskTextDiv');
   taskBtnDiv.classList.add('taskBtnDiv');
-  prioBtn.classList.add('prioBtn');
+  // prioBtn.classList.add('prioBtn');
   taskTitle.classList.add('taskTitle');
   taskDetails.classList.add('taskDetails');
   checkDiv.classList.add('checkDiv');
   checkBox.classList.add('checkBox');
+  checkP.classList.add('checkP');
 
   // adding attributes
-  prioBtn.setAttribute('id', 'prioBtn' + `${index.length - 1}`);
-  prioBtn.innerHTML = 'Prio'
+  // prioBtn.setAttribute('id', 'prioBtn' + `${index.length - 1}`);
+  // prioBtn.innerHTML = 'Prio'
   checkBox.setAttribute('id', 'checkBox' + `${index.length - 1}`);
   checkBox.setAttribute('type', 'checkbox');
   checkBox.setAttribute('name', 'check');
@@ -71,6 +72,10 @@ export default function noteBuilder(title, details) {
         // }
       }
     });
+
+    prioLight.addEventListener('click', () => {
+      prioLight.classList.toggle('prioLightHigh');
+    })
 
   // Need to figure out how to use index instead of id, then use that here
   // const prioBtnChange = document.getElementById('prioBtn');

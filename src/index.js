@@ -49,6 +49,13 @@ window.onload = () => {
     masc.style.display = 'none';
   })
 
+  const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      })
+
   // cancel button
   const cancelBtn = document.getElementById('cancelBtn');
   cancelBtn.addEventListener('click', () => {

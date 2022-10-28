@@ -348,22 +348,26 @@ textarea:focus {
 
 .taskDiv {
   width: 100%;
-  height: 15%;
-  background-color: rgba(88, 95, 102, 0.4);
+  height: 13%;
+  background-color: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .prioLight {
   height: 100%;
-  width: 10%;
-  background-color: rgba(0, 128, 0, 0.4);
+  width: 1.5%;
+  background-color: rgba(33, 80, 131, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px 0 0 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.prioLightHigh {
+  background-color: rgba(208, 0, 0, 0.9);
 }
 
 .prioHigh {
@@ -400,15 +404,16 @@ textarea:focus {
 }
 
 .taskTitle {
-  font-size: 20px;
-  height: 24px;
+  font-size: 16px;
+  height: 20px;
   text-decoration: underline;
 }
 
 .taskDetails {
   overflow-y: hidden;
-  font-size: 18px;
-  height: 20px;
+  font-size: 14px;
+  height: 16px;
+  color: rgb(53, 53, 53)
 }
 
 .taskBtnDiv {
@@ -423,4 +428,9 @@ textarea:focus {
 .checkBox {
   height: 15px;
   width: 15px
+}
+
+.checkP {
+  font-size: 12px;
+  font-style: italic;
 }
