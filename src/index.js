@@ -96,5 +96,12 @@ window.onload = () => {
     console.log(box.value);
   })
 })
+
+// resizing description tex box 
+description.addEventListener("keyup", e =>{
+  description.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        description.style.height = `${scHeight}px`;
+      });
 };
 

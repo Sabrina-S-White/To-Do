@@ -230,20 +230,17 @@ textarea:focus {
   transition: 0.3s;
   top: 10%;
   opacity: 0;
-  height: 10%;
   width: 20%;
 }
 
 .noteDivPopup {
   opacity: 100%;
-  height: 20%;
   width: 40%;
   display: flex;
   flex-direction: column;
 }
 
 .noteContentDiv {
-  height: 60%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -288,7 +285,7 @@ textarea:focus {
   line-height: 1.2rem;
   font-size: 0.9rem;
   width: 100%;
-  height: 60%;
+  height: 20px;
   resize: none;
 }
 
@@ -433,4 +430,10 @@ textarea:focus {
 .checkP {
   font-size: 12px;
   font-style: italic;
+}
+
+/* auto resizing textareas */
+
+textarea::-webkit-scrollbar{
+  width: 0px;
 }

@@ -194,6 +194,7 @@ export default function pageLoad() {
   // page attributes
   search.setAttribute('placeholder', 'Search');
   noteTitle.setAttribute('placeholder', 'New Note');
+  noteTitle.setAttribute('required', '')
   noteDetails.setAttribute('placeholder', 'Description');
   noteDetails.setAttribute('id', 'noteDetails');
   noteDiv.setAttribute('id', 'popup');
