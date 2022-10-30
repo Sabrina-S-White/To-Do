@@ -1,13 +1,11 @@
 // image imports
 import logo from './images/logo.png';
 import plus from './images/plus.png';
-import trash from './images/trash-can.png';
 import github from './images/git.png';
 import link from './images/linkedin.png';
 import emailLink from './images/mail.png';
 import burgerIcon from './images/menu.png';
 import homeIcon from './images/home.png';
-import helpIcon from './images/help.png';
 import tune from './images/tune.png';
 import blueBG from './images/bg-imgs/blue.jpg';
 import buildingBG from './images/bg-imgs/building.jpg';
@@ -18,13 +16,11 @@ export default function pageLoad() {
   // image handling
   const logoImg = new Image();
   const plusImg = new Image();
-  const trashImg = new Image();
   const gitImg = new Image();
   const linkImg = new Image();
   const emailImg = new Image();
   const menuImg = new Image();
   const homeImg = new Image();
-  const helpImg = new Image();
   const tuneImg = new Image();
   const blueImg = new Image();
   const buildingImg = new Image();
@@ -32,13 +28,11 @@ export default function pageLoad() {
   const sunImg = new Image();
   logoImg.src = logo;
   plusImg.src = plus;
-  trashImg.src = trash;
   gitImg.src = github;
   linkImg.src = link;
   emailImg.src = emailLink;
   menuImg.src = burgerIcon;
   homeImg.src = homeIcon;
-  helpImg.src = helpIcon;
   tuneImg.src = tune;
   blueImg.src = blueBG;
   buildingImg.src = buildingBG;
@@ -61,8 +55,14 @@ export default function pageLoad() {
   const home = document.createElement('a');
   const search = document.createElement('input');
   const add = document.createElement('a');
-  const help = document.createElement('a');
-  const deleteBtn = document.createElement('a');
+
+  // elements for sidebar
+  const githubList = document.createElement('li');
+  const linkedinList = document.createElement('li');
+  const emailList = document.createElement('li');
+  const git = document.createElement('a');
+  const linked = document.createElement('a');
+  const email = document.createElement('a');
 
   // elements for main section
   const main = document.createElement('div');
@@ -77,7 +77,7 @@ export default function pageLoad() {
   const title = document.createElement('p');
   const view = document.createElement('a');
 
-  // content for new note popup
+  // elements for new note popup
   const noteDiv = document.createElement('div');
   const noteContentDiv = document.createElement('div');
   const noteBtnsDiv = document.createElement('div');
@@ -91,18 +91,30 @@ export default function pageLoad() {
   const cancel = document.createElement('button');
   const save = document.createElement('button');
 
+  // elements for theme change popup
+  const themePopup = document.createElement('div');
+  const blueBtn = document.createElement('button');
+  const buildingBtn = document.createElement('button');
+  const modBtn = document.createElement('button');
+  const sunBtn = document.createElement('button');
+
   // appending elements to document
   document.body.appendChild(container);
   document.body.appendChild(masc);
+  document.body.appendChild(themePopup);
   container.appendChild(menu);
   container.appendChild(main);
   menu.appendChild(menuLeft);
   menu.appendChild(menuRight);
+  sideBar.appendChild(githubList);
+  githubList.appendChild(git);
+  sideBar.appendChild(linkedinList);
+  linkedinList.appendChild(linked);
+  sideBar.appendChild(emailList);
+  emailList.appendChild(email);
   menuLeft.appendChild(burger);
   menuLeft.appendChild(home);
   menuLeft.appendChild(search);
-  menuRight.appendChild(add);
-  menuRight.appendChild(help);
   main.appendChild(sideBar);
   main.appendChild(notes);
   notes.appendChild(innerNotes);
@@ -112,8 +124,8 @@ export default function pageLoad() {
   // appending content to mainTitle
   mainTitle.appendChild(title);
   mainTitle.appendChild(mainTitleRight);
+  mainTitleRight.appendChild(add);
   mainTitleRight.appendChild(view);
-  mainTitleRight.appendChild(deleteBtn);
 
   // appending elements to new note popup
   document.body.appendChild(noteDiv);
@@ -129,6 +141,12 @@ export default function pageLoad() {
   noteBtnsDivR.appendChild(cancel);
   noteBtnsDivR.appendChild(save);
 
+  // appending elements to theme popup
+  sideBar.appendChild(blueBtn);
+  sideBar.appendChild(buildingBtn);
+  sideBar.appendChild(modBtn);
+  sideBar.appendChild(sunBtn);
+
   // classlists
   container.classList.add('container');
   masc.classList.add('masc');
@@ -142,8 +160,6 @@ export default function pageLoad() {
   search.classList.add('search');
   add.classList.add('add');
   add.classList.add('noselect');
-  help.classList.add('help');
-  help.classList.add('noselect');
   main.classList.add('main');
   sideBar.classList.add('sideBar');
   notes.classList.add('notes');
@@ -154,13 +170,22 @@ export default function pageLoad() {
   burger.classList.add('icons');
   home.classList.add('icons');
   add.classList.add('icons');
-  help.classList.add('icons');
   title.classList.add('title');
   title.classList.add('noselect');
   view.classList.add('icons-dark');
-  deleteBtn.classList.add('icons-dark');
   view.classList.add('noselect');
   container.classList.add('bgImgBlue');
+  githubList.classList.add('sidebarItem');
+  githubList.classList.add('hide');
+  linkedinList.classList.add('sidebarItem');
+  linkedinList.classList.add('hide');
+  emailList.classList.add('sidebarItem');
+  emailList.classList.add('hide');
+  themeDiv.classList.add('themeDiv');
+  blueBtn.classList.add('themeBtn');
+  buildingBtn.classList.add('themeBtn');
+  modBtn.classList.add('themeBtn');
+  sunBtn.classList.add('themeBtn');
 
   // classlists for new note popup
   noteDiv.classList.add('noteDiv');
@@ -182,31 +207,38 @@ export default function pageLoad() {
   burger.appendChild(menuImg);
   home.appendChild(homeImg);
   add.appendChild(plusImg);
-  help.appendChild(helpImg);
   view.appendChild(tuneImg);
-  deleteBtn.appendChild(trashImg);
+  git.appendChild(gitImg);
+  linked.appendChild(linkImg);
+  email.appendChild(emailImg);
 
   // appending text
-  title.innerHTML = 'Today, ' + `${date}`;
+  title.innerHTML = 'Today, <br>' + `${date}`;
   cancel.innerHTML = 'Cancel';
   save.innerHTML = 'Save';
 
   // page attributes
   search.setAttribute('placeholder', 'Search');
   noteTitle.setAttribute('placeholder', 'New Note');
-  noteTitle.setAttribute('required', '')
   noteDetails.setAttribute('placeholder', 'Description');
   noteDetails.setAttribute('id', 'noteDetails');
+  noteDetails.setAttribute('maxlength', 150);
   noteDiv.setAttribute('id', 'popup');
   sideBar.setAttribute('id', 'sideBar');
+  git.setAttribute('href', 'https://github.com/Sabrina-S-White');
+  linked.setAttribute('href', 'https://www.linkedin.com/in/sabrina-white-7ba594b7/');
+  email.setAttribute('href', 'mailto: sabrina.scherma@gmail.com');
 
   // button attributes
   burger.setAttribute('id', 'burgerBtn');
   add.setAttribute('id', 'addBtn');
   cancel.setAttribute('id', 'cancelBtn');
   save.setAttribute('id', 'saveBtn');
-  help.setAttribute('id', 'helpBtn');
-  deleteBtn.setAttribute('id', 'deleteBtn');
+  view.setAttribute('id', 'viewBtn');
+  blueBtn.setAttribute('id', 'blueBtn');
+  buildingBtn.setAttribute('id', 'buildingBtn');
+  modBtn.setAttribute('id', 'modBtn');
+  sunBtn.setAttribute('id', 'sunBtn');
 
   return {};
 }

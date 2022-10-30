@@ -1,87 +1,65 @@
-import { index, checkBoxAry } from './index.js';
+import { index } from './index.js';
 
 export default function noteBuilder(title, details) {
   // creating elements for to dos
   const mainTasks = document.querySelector('.mainTasks');
   const taskDiv = document.createElement('div');
   const prioLight = document.createElement('div');
-  // const prioBtn = document.createElement('button');
   const taskTextDiv = document.createElement('div');
   const taskBtnDiv = document.createElement('div');
-  const checkP = document.createElement('p');
   const checkDiv = document.createElement('div');
-  const checkBox = document.createElement('input');
-  const taskTitle = document.createElement('textarea');
-  const taskDetails = document.createElement('textarea');
-  const id = index.length - 1;
+  const trashBtn = document.createElement('button');
+  const taskTitle = document.createElement('p');
+  const taskDetails = document.createElement('p');
 
   // appending elements to document
   mainTasks.appendChild(taskDiv);
   taskDiv.appendChild(prioLight);
   taskDiv.appendChild(taskTextDiv);
   taskDiv.appendChild(taskBtnDiv);
-  // prioLight.appendChild(prioBtn);
   taskTextDiv.appendChild(taskTitle);
   taskTextDiv.appendChild(taskDetails);
-  taskBtnDiv.appendChild(checkP);
   taskBtnDiv.appendChild(checkDiv);
-  checkDiv.appendChild(checkBox);
+  checkDiv.appendChild(trashBtn);
 
   // adding classlists
   taskDiv.classList.add('taskDiv');
   prioLight.classList.add('prioLight');
   taskTextDiv.classList.add('taskTextDiv');
   taskBtnDiv.classList.add('taskBtnDiv');
-  // prioBtn.classList.add('prioBtn');
   taskTitle.classList.add('taskTitle');
   taskDetails.classList.add('taskDetails');
   checkDiv.classList.add('checkDiv');
-  checkBox.classList.add('checkBox');
-  checkP.classList.add('checkP');
+  trashBtn.classList.add('checkBox');
 
   // adding attributes
-  // prioBtn.setAttribute('id', 'prioBtn' + `${index.length - 1}`);
-  // prioBtn.innerHTML = 'Prio'
-  checkBox.setAttribute('id', 'checkBox' + `${index.length - 1}`);
-  checkBox.setAttribute('type', 'checkbox');
-  checkBox.setAttribute('name', 'check');
-  checkP.innerHTML = 'Done'
+  trashBtn.setAttribute('id', 'trashBtn' + `${index.length - 1}`);
 
-  // note content 
+  // note content
   taskTitle.innerHTML = `${title}`;
   taskDetails.innerHTML = `${details}`;
+  trashBtn.innerHTML = 'Delete';
 
-  // check box / DOM communication
-  checkBoxAry.push(checkBox);
-
-  // mark as done 
-  const trashBtn = document.getElementById('deleteBtn');
-  trashBtn.addEventListener('click', () => {
-    // if (checkBox.checked) {
-    //   while (taskDiv.firstChild) {
-    //     taskDiv.removeChild(taskDiv.firstChild);
-    //     taskDiv.remove();
-    //   }
-      for (let i = 0; i < index.length; i++) {
-        console.log(i)
-        // if (index[i].checkBox.checked) {
-        //   while (taskDiv.firstChild) {
-        //     taskDiv.removeChild(taskDiv.firstChild);
-        //     taskDiv.remove();
-        //   }
-        // }
-      }
+  // mark as done
+  const taskTitles = document.querySelectorAll('.taskTitle');
+  taskTitles.forEach((title) => {
+    trashBtn.addEventListener('click', () => {
+      index.forEach((ind) => {
+        if ((ind.name = title.innerHTML)) {
+          index.splice(index.indexOf(ind), 1);
+          taskDiv.removeChild(taskDiv.firstChild);
+          taskDiv.remove();
+        }
+      });
     });
+  });
 
-    prioLight.addEventListener('click', () => {
-      prioLight.classList.toggle('prioLightHigh');
-    })
+  prioLight.addEventListener('click', () => {
+    prioLight.classList.toggle('prioLightHigh');
+    console.log(taskTitle.innerHTML);
+  });
 
-  // Need to figure out how to use index instead of id, then use that here
-  // const prioBtnChange = document.getElementById('prioBtn');
-  //   prioBtnChange.addEventListener('click', () => {
-  //   prioLight.classList.toggle('prioHigh');
-  // })
+  taskDiv.addEventListener('click', () => {});
 
-  return {  }
+  return {};
 }

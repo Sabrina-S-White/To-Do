@@ -1,5 +1,10 @@
 # To-Do
 
-I want to add a feature that doesn't let you click save on the new note popup if a title hasnt been entered. This would be some javascript that says if input is null, add class that disables button. If not null remove that class?
+Add a check to make sure you dont make multiple notes with same title 
 
-I've gotta make the checkbox update the actual object in the array. Then I can filter for a true value on each object and use the method of splicing bob mentioned
+add themes - including making color variables 
+
+replace search bar and home icon with project name and a logo or something 
+
+mobile formatting
+
