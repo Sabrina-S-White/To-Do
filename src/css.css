@@ -4,6 +4,14 @@
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  --menuBlue: 33, 80, 131;
+  --menuBlueLight: 93, 140, 191;
+  --sidebarBlue: 114, 160, 181;
+
+  --menuMod: 201, 204, 203;
+  --menuModLight: 261, 264, 263;
+  --sidebarMod: 110, 116, 158;
 }
 
 body {
@@ -26,7 +34,7 @@ textarea:focus {
 .menu {
   height: 6%;
   width: 100%;
-  background-color: rgb(33, 80, 131);
+  background-color: rgb(var(--menuBlue));
   display: flex;
   justify-content: space-between;
 }
@@ -66,6 +74,7 @@ textarea:focus {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 15%;
   transition: all 0.5s;
+  scale: 110%;
 }
 
 .icons-dark img {
@@ -81,6 +90,7 @@ textarea:focus {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 15%;
   transition: all 0.5s;
+  scale: 110%;
 }
 
 .search {
@@ -103,51 +113,81 @@ textarea:focus {
   height: 94%;
   width: 100%;
   display: flex;
+  transition: 0.5s;
+}
+
+.mainSideBar {
+  width: 80%;
 }
 
 /* these  must stay in order */
 
 .sideBar {
   height: 100%;
-  width: 0%;
+  width: 20%;
   background-color: #fff;
-  background-color: rgba(114, 160, 181, 0.7);
+  background-color: rgba(var(--sidebarBlue), 0.9);
   transition: 0.6s;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 4fr;
   justify-items: center;
   align-items: flex-start;
-  padding-top: 40px;
+  padding-top: 70px;
+  position: absolute;
+  left: -20%;
 }
 
 .sideBarHide {
-  width: 20%;
+  left: 0%;
 }
 
 .sidebarItem {
   list-style: none;
   transition: 0.4s;
-  opacity: 100;
+  opacity: 100%;
 }
 
 .sidebarItem a img {
   transition: 0.5s;
-  height: 100%;
   width: auto;
 }
 
 .sidebarItem a img:hover {
-  height: 110%;
+  scale: 120%;
 }
 
-.hide {
-  opacity: 0;
+.themeDiv {
+  opacity: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.themeP {
+  grid-column: 1 / 3;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: 0.5s;
+  opacity: 100%;
 }
 
 .themeBtn {
   height: 25px;
-  width: 60px;
+  width: auto;
+  transition: 0.5s;
+  background-color: rgb(var(--menuBlueLight));
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.themeBtn:hover {
+  background-color: rgb(var(--menuBlue));
+  color: #fff;
 }
 
 /* ------------------------------ */
@@ -162,6 +202,12 @@ textarea:focus {
 .innerNotes {
   height: 100%;
   width: 85%;
+  padding-left: 0;
+  transition: 0.5s;
+}
+
+.notesHide {
+  padding-left: 15%;
 }
 
 .mainTitle {
@@ -356,14 +402,14 @@ textarea:focus {
   background-color: rgb(205, 205, 205);
 }
 
-#saveBtn {
-  background-color: rgb(93, 140, 191);
-  color: #fff;
+.saveBtn {
+  background-color: rgb(var(--menuBlueLight));
   font-weight: 600;
 }
 
-#saveBtn:hover {
-  background-color: rgb(33, 80, 131);
+.saveBtn:hover {
+  background-color: rgb(var(--menuBlue));
+  color: #fff;
 }
 
 /* disable text selection */
@@ -392,7 +438,7 @@ textarea:focus {
 .prioLight {
   height: 100%;
   width: 1.5%;
-  background-color: rgba(33, 80, 131, 0.8);
+  background-color: rgba(var(--menuBlue), 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -451,14 +497,14 @@ textarea:focus {
 .checkBox {
   height: 30px;
   width: 55px;
-  background-color: rgb(93, 140, 191);
+  background-color: rgb(var(--menuBlueLight));
   border: none;
   border-radius: 5px;
   padding: 5px;
 }
 
 .checkBox:hover {
-  background-color: rgb(33, 80, 131);
+  background-color: rgb(var(--menuBlue));
   color: #fff;
 }
 
@@ -472,6 +518,8 @@ textarea:focus {
 textarea::-webkit-scrollbar {
   width: 0px;
 }
+
+/* mobile styling */
 
 @media only screen and (max-width: 450px) {
   .title {
@@ -490,7 +538,7 @@ textarea::-webkit-scrollbar {
     gap: 20px;
     padding-bottom: 10px;
   }
-  
+
   /* task styling for mobile*/
   .taskDiv {
     justify-content: flex-start;
@@ -515,7 +563,7 @@ textarea::-webkit-scrollbar {
 
   /* note popup styling for mobile */
   .noteDiv {
-width: 50%;
+    width: 50%;
     top: 25%;
   }
 
@@ -532,5 +580,44 @@ width: 50%;
 
   .noteBtnsDivInner {
     width: 60%;
+  }
+
+  /* mobile sidebar styling */
+  .sideBar {
+    width: 55%;
+    left: -55%;
+  }
+
+  .sideBarHide {
+    left: 0%;
+  }
+
+  .themeDiv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .themeP {
+    grid-column: 1 / 2;
+  }
+
+  /* background styling */
+
+  .bgImgSun {
+    background-position: 40%;
+  }
+
+  .bgImgBlue {
+    background-position: 30%;
+  }
+
+  .bgImgBuilding {
+    background-position: 35%;
+  }
+
+  .bgImgMod {
+    background-position: 40%;
   }
 }

@@ -22,11 +22,10 @@ window.onload = () => {
   const burgerBtn = document.getElementById('burgerBtn');
   const sideBar = document.getElementById('sideBar');
   const sidebarItem = document.querySelectorAll('.sidebarItem');
+  const innerNotes = document.querySelector('.innerNotes');
   burgerBtn.addEventListener('click', () => {
     sideBar.classList.toggle('sideBarHide');
-    sidebarItem.forEach(item => {
-      item.classList.toggle('hide');
-    })
+    innerNotes.classList.toggle('notesHide');
   });
 
   // add new note
@@ -53,7 +52,7 @@ window.onload = () => {
       masc.style.display = 'none';
     } else if (name.value === '') {
       name.setAttribute('placeholder', 'Please enter a title');
-      name.style.border = "1px solid red"
+      name.style.border = '1px solid red';
       return;
     }
   });
@@ -106,8 +105,37 @@ window.onload = () => {
   });
 
   // theme change
-  const viewBtn = document.getElementById('viewBtn');
-    viewBtn.addEventListener('click', () => {
-      
-  })
+  const blueBtn = document.getElementById('blueBtn');
+  const buildingBtn = document.getElementById('buildingBtn');
+  const modBtn = document.getElementById('modBtn');
+  const sunBtn = document.getElementById('sunBtn');
+  const container = document.getElementById('container');
+
+  buildingBtn.addEventListener('click', () => {
+    container.classList.add('bgImgBuilding');
+    container.classList.remove('bgImgBlue');
+    container.classList.remove('bgImgMod');
+    container.classList.remove('bgImgSun');
+  });
+
+  blueBtn.addEventListener('click', () => {
+    container.classList.add('bgImgBlue');
+    container.classList.remove('bgImgBuilding');
+    container.classList.remove('bgImgMod');
+    container.classList.remove('bgImgSun');
+  });
+
+  modBtn.addEventListener('click', () => {
+    container.classList.add('bgImgMod');
+    container.classList.remove('bgImgBlue');
+    container.classList.remove('bgImgBuilding');
+    container.classList.remove('bgImgSun');
+  });
+
+  sunBtn.addEventListener('click', () => {
+    container.classList.add('bgImgSun');
+    container.classList.remove('bgImgBlue');
+    container.classList.remove('bgImgBuilding');
+    container.classList.remove('bgImgMod');
+  });
 };

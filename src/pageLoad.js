@@ -93,6 +93,8 @@ export default function pageLoad() {
 
   // elements for theme change popup
   const themePopup = document.createElement('div');
+  const themeDiv = document.createElement('div');
+  const themeP = document.createElement('p');
   const blueBtn = document.createElement('button');
   const buildingBtn = document.createElement('button');
   const modBtn = document.createElement('button');
@@ -142,10 +144,12 @@ export default function pageLoad() {
   noteBtnsDivR.appendChild(save);
 
   // appending elements to theme popup
-  sideBar.appendChild(blueBtn);
-  sideBar.appendChild(buildingBtn);
-  sideBar.appendChild(modBtn);
-  sideBar.appendChild(sunBtn);
+  sideBar.appendChild(themeDiv);
+  themeDiv.appendChild(themeP);
+  themeDiv.appendChild(blueBtn)
+  themeDiv.appendChild(buildingBtn);
+  themeDiv.appendChild(modBtn);
+  themeDiv.appendChild(sunBtn);
 
   // classlists
   container.classList.add('container');
@@ -169,19 +173,17 @@ export default function pageLoad() {
   mainTasks.classList.add('mainTasks');
   burger.classList.add('icons');
   home.classList.add('icons');
-  add.classList.add('icons');
+  add.classList.add('icons-dark');
   title.classList.add('title');
   title.classList.add('noselect');
   view.classList.add('icons-dark');
   view.classList.add('noselect');
   container.classList.add('bgImgBlue');
   githubList.classList.add('sidebarItem');
-  githubList.classList.add('hide');
   linkedinList.classList.add('sidebarItem');
-  linkedinList.classList.add('hide');
   emailList.classList.add('sidebarItem');
-  emailList.classList.add('hide');
   themeDiv.classList.add('themeDiv');
+  themeP.classList.add('themeP');
   blueBtn.classList.add('themeBtn');
   buildingBtn.classList.add('themeBtn');
   modBtn.classList.add('themeBtn');
@@ -200,6 +202,7 @@ export default function pageLoad() {
   save.classList.add('icons');
   cancel.classList.add('btn');
   save.classList.add('btn');
+  save.classList.add('saveBtn')
   noteTitle.classList.add('noteTitle');
   noteDetails.classList.add('noteDetails');
 
@@ -216,6 +219,11 @@ export default function pageLoad() {
   title.innerHTML = 'Today, <br>' + `${date}`;
   cancel.innerHTML = 'Cancel';
   save.innerHTML = 'Save';
+  themeP.innerHTML = "Theme"
+  blueBtn.innerHTML = "Iceberg"
+  buildingBtn.innerHTML = "Business";
+  modBtn.innerHTML = 'Modern'
+  sunBtn.innerHTML = 'Landscape';
 
   // page attributes
   search.setAttribute('placeholder', 'Search');
@@ -228,6 +236,7 @@ export default function pageLoad() {
   git.setAttribute('href', 'https://github.com/Sabrina-S-White');
   linked.setAttribute('href', 'https://www.linkedin.com/in/sabrina-white-7ba594b7/');
   email.setAttribute('href', 'mailto: sabrina.scherma@gmail.com');
+  container.setAttribute('id', 'container')
 
   // button attributes
   burger.setAttribute('id', 'burgerBtn');
